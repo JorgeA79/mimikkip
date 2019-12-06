@@ -6,13 +6,14 @@ client.on('ready',() => {
 	   client.user.setPresence({game: {name: "", type: 0}});
 });
 
-var prefix = "m."
+var prefix = "s."
 
 client.on('message', message => {
 	if (message.author.bot){
-	if (message.content.startsWith('Bungou Stray')) {
+	if (message.content.startsWith('join')) {
 
-		 message.channel.send(`@everyone WHAPAM );
+let channel = client.channels.get('594033961097887775');
+  channel.join()
 	}}
 });
 
