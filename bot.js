@@ -5,7 +5,7 @@ const client = new Discord.Client();
 var prefix = "s."
 
 client.on('message', message => {
-	if (message.author == client.user) return;
+	if (message.author === client.user) return;
 	if (message.content.startsWith('join')) {
 
 
