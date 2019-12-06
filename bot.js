@@ -9,12 +9,13 @@ client.on('ready',() => {
 var prefix = "s."
 
 client.on('message', message => {
-	if (message.author.bot){
-	if (message.content.startsWith('join')) {
+	if (message.author === client.user) return;
+	if (message.content.startsWith((prefix) + 'join')) {
+
 
 let channel = client.channels.get('594033961097887775');
   channel.join()
-	}}
+	}
 });
 
 //Important
