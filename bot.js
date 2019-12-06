@@ -9,7 +9,7 @@ client.on('message', message => {
 	if (message.author === client.user) return;
 	if (message.content.startsWith('join')) {
     message.delete(1000);
- message.channel.send(`Oko :)`);
+ message.channel.send(`Que jotos :)`);
 	}
 });
 
