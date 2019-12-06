@@ -9,6 +9,7 @@ client.on('message', message => {
 	if (message.content.startsWith('join')) {
  
  const channel = client.channels.get("594033961097887775");
+		
   if (!channel) return console.error("The channel does not exist!");
   channel.join().then(connection => {
     // Yay, it worked!
