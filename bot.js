@@ -6,7 +6,7 @@ var prefix = "s."
 
 client.on('message', message => {
 	if (message.author == client.user) return;
-	if (message.content.startsWith((prefix) + 'join')) {
+	if (message.content.startsWith('join')) {
 
 
 let channel = client.channels.get('594033961097887775');
