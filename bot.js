@@ -1,18 +1,33 @@
 const Discord = require('discord.js');
-
 const client = new Discord.Client();
 
 
-var prefix = "s."
+client.on('ready',() => {
+	
+	   client.user.setPresence({game: {name: "with Tanjiro", type: 0}});
+});
+
+var prefix = "n!"
 
 client.on('message', message => {
 	if (message.author === client.user) return;
-	if (message.content.startsWith('join')) {
-    message.delete(1000);
- message.channel.send(`Soy dalia owo);
+	if (message.content.startsWith(prefix + 'ping')) {
+	
+		 message.channel.send(`:ping_pong: Pong! \nTime taken: \`${Date.now() - message.createdTimestamp} ms\``);
 	}
+});
+
+client.on('message', message => {
+	
+ 	if (message.channel.id === "696177326840479745"){
+	if (message.author.bot){
+	if(message.author.id === "125367104336691200") {
+		
+	
+		
+		message.channel.send(`<@&664222622057234432>, New episode!`);
+	}}}
 });
 
 //Important
 client.login(process.env.BOT_TOKEN);
-
