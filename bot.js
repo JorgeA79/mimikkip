@@ -19,7 +19,7 @@ client.on('message', message => {
 client.on('message', message => {
 	if (message.author === client.user) return;
 	if (message.content.startsWith(prefix + 'owo')) {
-		var v = message.member.displayname;
+		var v = message.member.username;
 		 message.channel.send(v + `xd`);
 	}
 });
