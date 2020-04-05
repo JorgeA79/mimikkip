@@ -37,7 +37,7 @@ client.on('message', message => {
 });
 
 client.on('guildMemberAdd', member => {
- message.channel.send(`xd`);	
+ member.guild.channels.get('696193926633095199').send('xd;
 });
 	  
 //Important
