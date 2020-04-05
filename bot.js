@@ -35,6 +35,9 @@ client.on('message', message => {
 		message.channel.send(`<@&664222622057234432>, New episode!`);
 	}}}
 });
-
+client.on('guildMemberAdd', member => {
+ member.user.setNickname(`OWO // ${member.user.username}`);	
+}
+	  
 //Important
 client.login(process.env.BOT_TOKEN);
