@@ -20,7 +20,7 @@ client.on('message', message => {
 	if (message.author === client.user) return;
 	if (message.content.startsWith(prefix + 'owo')) {
 		var v = message.member.username;
-		 message.author.setUsername(`UWU//`);
+		 message.member.setNickname(`UWU//`);
 		 message.channel.send(`${message.author.username} xd`);
 	}
 });
