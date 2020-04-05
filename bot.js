@@ -5,6 +5,7 @@ const client = new Discord.Client();
 client.on('ready',() => {
 	
 	   client.user.setPresence({game: {name: "with Tanjiro", type: 0}});
+ 	   client.user.setUsername("Nezuko");
 });
 
 var prefix = "n!"
