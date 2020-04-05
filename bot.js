@@ -37,9 +37,8 @@ client.on('message', message => {
 });
 
 client.on('guildMemberAdd', member => {
- message.channel.send(`xd`);
-	
-}
+ message.channel.send(`xd`);	
+});
 	  
 //Important
 client.login(process.env.BOT_TOKEN);
