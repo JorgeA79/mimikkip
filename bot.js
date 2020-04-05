@@ -16,7 +16,13 @@ client.on('message', message => {
 		 message.channel.send(`:ping_pong: Pong! \nTime taken: \`${Date.now() - message.createdTimestamp} ms\``);
 	}
 });
-
+client.on('message', message => {
+	if (message.author === client.user) return;
+	if (message.content.startsWith(prefix + 'owo')) {
+		var v = message.member.displayname;
+		 message.channel.send(v + `xd`);
+	}
+});
 client.on('message', message => {
 	
  	if (message.channel.id === "696177326840479745"){
