@@ -16,14 +16,7 @@ client.on('message', message => {
 		 message.channel.send(`:ping_pong: Pong! \nTime taken: \`${Date.now() - message.createdTimestamp} ms\``);
 	}
 });
-client.on('message', message => {
-	if (message.author === client.user) return;
-	if (message.content.startsWith(prefix + 'owo')) {
-		var v = message.member.username;
-		 message.member.setNickname(`OWO // ${message.author.username}`);
-		 message.channel.send(`${message.author.username} xd`);
-	}
-});
+
 client.on('message', message => {
 	
  	if (message.channel.id === "696177326840479745"){
@@ -37,7 +30,6 @@ client.on('message', message => {
 });
 
 client.on('guildMemberAdd', member => {
- 	 member.guild.channels.get('696193926633095199').send('xd ${member}');
 	 var j = member.displayName;
 	 member.setNickname(`OWO // `+ j);
 });
