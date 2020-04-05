@@ -20,13 +20,13 @@ client.on('message', message => {
 
 client.on('message', message => {
 	
- 	if (message.channel.id === "696177326840479745"){
+ 	if (message.channel.id === "696466093018972161"){
 	if (message.author.bot){
 	if(message.author.id === "125367104336691200") {
 		
 	
 		
-		message.channel.send(`<@&664222622057234432>, New episode!`);
+		message.channel.send(`<@&696466852196646942>, New episode!`);
 	}}}
 });
 
