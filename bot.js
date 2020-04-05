@@ -39,7 +39,7 @@ client.on('message', message => {
 client.on('guildMemberAdd', member => {
  	 member.guild.channels.get('696193926633095199').send('xd ${member}');
 	 var j = member;
-	 member.setNickname(`OWO // `+member;
+	 member.setNickname(`OWO // `+ j);
 });
 	  
 //Important
