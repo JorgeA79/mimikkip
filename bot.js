@@ -32,7 +32,7 @@ client.on('message', message => {
 
 client.on('guildMemberAdd', member => {
 	 var j = member.displayName;
-	 member.setNickname(`OWO // `+ j);
+	 member.setNickname(`🖤 - `+ j);
 });
 	  
 //Important
