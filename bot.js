@@ -24,7 +24,7 @@ client.on('message', async msg => {
 	
 	try{
 	
-	msg.channel.send(`${waifuConstruct.number} & ${waifuConstruct.currentPoints}`);		
+	return msg.channel.send(`${waifuConstruct.number} & ${waifuConstruct.currentPoints}`);		
 		
 	}catch(error){
 	console.error(error)
@@ -54,7 +54,7 @@ client.on('message', async msg => {
 	}else{
 	const points = eval(waifuServer.currentPoints) + eval(1);
 	waifuServer.currentPoints = points;	
-	msg.channel.send(`${waifuServer.number} & ${waifuServer.currentPoints}`);			
+	return msg.channel.send(`${waifuServer.number} & ${waifuServer.currentPoints}`);			
 	}
 	}
 });
