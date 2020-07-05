@@ -4,6 +4,9 @@ const client = new Discord.Client();
 var prefix = "p!";
 var waifus = new Map();
 
+var contents = fs.readFileSync("./commands/agents/agents.json");
+var jsonContent = JSON.parse(contents);
+
 client.on('message', async msg => {
 	if (msg.author === client.user) return;
 	if (msg.author.bot) return;
@@ -13,6 +16,7 @@ client.on('message', async msg => {
 	const waifuConstruct = {
 		textChannel: msg.channel,
 		number:	generateWaifu(),
+		waifu: Math.floor(Math.random()*jsonContent.waifus.length),
 		currentPoints: 1
 	};
 	waifus.set(msg.guild.id, waifuConstruct);
@@ -26,8 +30,15 @@ client.on('message', async msg => {
 	}			
 	}else{
 	if(waifuServer.currentPoints == waifuServer.number){		
-	msg.channel.send('Waifu!');	
+	var waifu = jsonContent.waifus;
+		
+	const embed = new Discord.MessageEmbed()
+	.setTitle(waifu[waifuServer.waifu].name)
+	.setImage(waifu[waifuServer.waifu].image);
+	msg.channel.send(embed)
+	
 	waifus.delete(msg.guild.id);	
+		
 	}else{
 	const points = eval(waifuServer.currentPoints) + eval(1);
 	waifuServer.currentPoints = points;	
@@ -37,9 +48,9 @@ client.on('message', async msg => {
 });
 
 function generateWaifu(){
-let min = 10;
-let max = 30;  
-return Math.floor(Math.random()*(max - min+1)) + 10;
+let min = 1;
+let max = 3;  
+return Math.floor(Math.random()*(max - min+1)) + 1;
 }
 
 
