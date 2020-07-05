@@ -25,8 +25,6 @@ client.on('message', async msg => {
 		
 	waifuServer.waifuConstruct.textChannel.send('xdxd')
 	}
-	
-	}
 });
 
 function generateWaifu(){
