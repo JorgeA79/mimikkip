@@ -32,15 +32,15 @@ client.on('message', async msg => {
 	}else{
 	if(waifuServer.currentPoints == waifuServer.number){		
 	var waifu = jsonContent.waifus;
-		
-	const embed = new Discord.MessageEmbed()
-	.setTitle(waifu[waifuServer.waifu].name)
-	.setImage(waifu[waifuServer.waifu].image);
-	msg.channel.send(embed)
 	
 	const filter = response => {
 	return waifu[waifuServer.waifu].name.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 	};	
+		
+	const embed = new Discord.MessageEmbed()
+	.setTitle(waifu[waifuServer.waifu].name)
+	.setImage(waifu[waifuServer.waifu].image);
+	msg.channel.send(embed).then(() => {		
 		
 	msg.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
 		.then(collected => {
