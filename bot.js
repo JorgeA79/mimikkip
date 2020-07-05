@@ -20,7 +20,7 @@ client.on('message', async msg => {
 	
 	try{
 	
-	msg.channel.send(waifuConstruct.number & waifuConstruct.currentPoints);		
+	msg.channel.send(`${waifuServer.number} & ${waifuServer.currentPoints}`);		
 		
 	}catch(error){
 	console.error(error)
@@ -32,14 +32,14 @@ client.on('message', async msg => {
 	}else{
 	const points = eval(waifuServer.currentPoints) + eval(1);
 	waifuServer.currentPoints = points;	
-	msg.channel.send(waifuServer.number & waifuServer.currentPoints);			
+	msg.channel.send(`${waifuServer.number} & ${waifuServer.currentPoints}`);			
 	}
 	}
 });
 
 function generateWaifu(){
-let min = 1;
-let max = 3;  
+let min = 10;
+let max = 30;  
 return Math.floor(Math.random()*(max - min+1)) + 10;
 }
 
