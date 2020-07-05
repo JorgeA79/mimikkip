@@ -13,14 +13,13 @@ client.on('message', async msg => {
 	const waifuConstruct = {
 		textChannel: msg.channel,
 		number:	generateWaifu(),
-		initialPoints: 0,
 		currentPoints: 1
 	};
 	waifus.set(msg.guild.id, waifuConstruct);
 	
 	try{
 	
-	msg.channel.send(`${waifuServer.number} & ${waifuServer.currentPoints}`);		
+	msg.channel.send(`${waifuConstruct.number} & ${waifuConstruct.currentPoints}`);		
 		
 	}catch(error){
 	console.error(error)
