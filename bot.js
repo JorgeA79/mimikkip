@@ -12,7 +12,7 @@ client.on('message', async msg => {
 	if(!waifuServer){
 	const waifuConstruct = {
 		textChannel: msg.channel,
-		number:	generateWaifu().		
+		number:	generateWaifu()		
 	};
 	waifus.set(msg.guild.id, waifuConstruct);
 	
