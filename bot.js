@@ -42,9 +42,11 @@ client.on('message', async msg => {
 	msg.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
 		.then(collected => {
 			msg.channel.send(`${collected.first().author} got the correct answer!`);
+			waifus.delete(msg.guild.id);
 		})
 		.catch(collected => {
 			msg.channel.send('Looks like nobody got the answer this time.');
+			waifus.delete(msg.guild.id);
 		});
 	});	
 		
