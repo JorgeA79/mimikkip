@@ -38,7 +38,20 @@ client.on('message', async msg => {
 	.setImage(waifu[waifuServer.waifu].image);
 	msg.channel.send(embed)
 	
-	waifus.delete(msg.guild.id);	
+	const filter = response => {
+	return waifu[waifuServer.waifu].name.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+	};	
+		
+	msg.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
+		.then(collected => {
+			msg.channel.send(`${collected.first().author} got the correct name of the waifu!`);
+			waifus.delete(msg.guild.id);	
+		})
+		.catch(collected => {
+			msg.channel.send('Looks like nobody got the answer this time.');
+			waifus.delete(msg.guild.id);	
+		});
+	});
 		
 	}else{
 	const points = eval(waifuServer.currentPoints) + eval(1);
