@@ -32,21 +32,20 @@ client.on('message', async msg => {
 	}else{
 	if(waifuServer.currentPoints == waifuServer.number){		
 	var waifu = jsonContent.waifus;
+	const filter = m => m.content.includes(`p!get ${waifu[waifuServer.waifu].name}`);
 		
 	const embed = new Discord.MessageEmbed()
 	.setTitle(waifu[waifuServer.waifu].name)
 	.setImage(waifu[waifuServer.waifu].image);
-	msg.channel.send(embed)	
-	
-	const filter = m => m.content.includes(`p!get ${waifu[waifuServer.waifu].name}`);	
-	const collector = msg.channel.createMessageCollector(filter, { time: 15000 });
-
-	collector.on('collect', m => {
-	msg.channel.send(`${collect.first().author} got the correct answer!`);
-	});
-
-	collector.on('end', collected => {
-	console.log(`Collected ${collected.size} items`);
+		
+	msg.channel.send(embed).then(() => {
+	msg.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
+		.then(collected => {
+			msg.channel.send(`${collected.first().author} got the correct answer!`);
+		})
+		.catch(collected => {
+			msg.channel.send('Looks like nobody got the answer this time.');
+		});
 	});	
 		
 		
