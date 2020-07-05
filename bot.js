@@ -38,7 +38,7 @@ client.on('message', async msg => {
 	.setImage(waifu[waifuServer.waifu].image);
 	msg.channel.send(embed)	
 	
-	const filter = m => m.content.toUpperCase().includes(`p!get ${waifu[waifuServer.waifu].name}`);	
+	const filter = m => m.content.includes(`p!get ${waifu[waifuServer.waifu].name}`);	
 	const collector = msg.channel.createMessageCollector(filter, { time: 15000 });
 
 	collector.on('collect', m => {
