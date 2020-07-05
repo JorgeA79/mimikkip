@@ -19,7 +19,7 @@ client.on('message', async msg => {
 		number:	generateWaifu(),
 		waifu: Math.floor(Math.random()*jsonContent.waifus.length),
 		currentPoints: 1,
-		mSent: false
+		mSent: 0
 	};
 	waifus.set(msg.guild.id, waifuConstruct);
 	
@@ -34,9 +34,9 @@ client.on('message', async msg => {
 	
 	if(waifuServer.currentPoints == waifuServer.number){	
 		
-	if(waifuServer.mSent == false){	
-	
-	waifuServer.mSent == true;	
+	if(waifuServer.mSent == 0){		
+	waifuServer.mSent == 1;	
+		
 	var waifu = jsonContent.waifus;
 	const filter = m => m.content.includes(`p!get ${waifu[waifuServer.waifu].name}`);
 		
