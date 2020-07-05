@@ -5,7 +5,7 @@ const fs = require('fs');
 var prefix = "p!";
 var waifus = new Map();
 
-var contents = fs.readFileSync(".waifus.json");
+var contents = fs.readFileSync("./waifus.json");
 var jsonContent = JSON.parse(contents);
 
 client.on('message', async msg => {
