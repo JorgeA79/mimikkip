@@ -17,13 +17,14 @@ client.on('message', async msg => {
 	waifus.set(msg.guild.id, waifuConstruct);
 	
 	try{
-	waifuServer.waifuConstruct.textChannel.send('xd')
+	
+	msg.channel.send(waifuConstruct.number);		
+		
 	}catch(error){
 	console.error(error)
 	}			
 	}else{
-		
-	waifuServer.waifuConstruct.textChannel.send('xdxd')
+	msg.channel.send(waifuServer.number);		
 	}
 });
 
