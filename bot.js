@@ -5,8 +5,8 @@ var prefix = "p!";
 var waifus = new Map();
 
 client.on('message', async msg => {
-	if (message.author === client.user) return;
-	if (message.author.bot) return;
+	if (msg.author === client.user) return;
+	if (msg.author.bot) return;
 	const waifuServer = waifus.get(msg.guild.id);
 	
 	if(!waifuServer){
