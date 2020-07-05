@@ -36,7 +36,7 @@ client.on('message', async msg => {
 		
 	if(waifuServer.mSent == 1) return;		
 	
-	waifuServer.mSent == 1;		
+	waifuServer.mSent = 1;		
 	var waifu = jsonContent.waifus;
 	const filter = m => m.content.includes(`p!get ${waifu[waifuServer.waifu].name}`);
 		
