@@ -32,26 +32,23 @@ client.on('message', async msg => {
 	}else{
 	if(waifuServer.currentPoints == waifuServer.number){		
 	var waifu = jsonContent.waifus;
-	
-	const filter = response => {
-	return waifu[waifuServer.waifu].name.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-	};	
 		
 	const embed = new Discord.MessageEmbed()
 	.setTitle(waifu[waifuServer.waifu].name)
 	.setImage(waifu[waifuServer.waifu].image);
-	msg.channel.send(embed).then(() => {		
-		
-	msg.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
-		.then(collected => {
-			msg.channel.send(`${collected.first().author} got the correct name of the waifu!`);
-			waifus.delete(msg.guild.id);	
-		})
-		.catch(collected => {
-			msg.channel.send('Looks like nobody got the answer this time.');
-			waifus.delete(msg.guild.id);	
-		});
+	msg.channel.send(embed)	
+	
+	const filter = m => m.content.toUpperCase().includes(`p!get ${waifu[waifuServer.waifu].name}`);	
+	const collector = msg.channel.createMessageCollector(filter, { time: 15000 });
+
+	collector.on('collect', m => {
+	msg.channel.send(`${collect.first().author} got the correct answer!`);
 	});
+
+	collector.on('end', collected => {
+	console.log(`Collected ${collected.size} items`);
+	});	
+		
 		
 	}else{
 	const points = eval(waifuServer.currentPoints) + eval(1);
