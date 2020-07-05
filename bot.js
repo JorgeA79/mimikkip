@@ -18,7 +18,8 @@ client.on('message', async msg => {
 		textChannel: msg.channel,
 		number:	generateWaifu(),
 		waifu: Math.floor(Math.random()*jsonContent.waifus.length),
-		currentPoints: 1
+		currentPoints: 1,
+		mSent: false
 	};
 	waifus.set(msg.guild.id, waifuConstruct);
 	
@@ -30,7 +31,12 @@ client.on('message', async msg => {
 	console.error(error)
 	}			
 	}else{
-	if(waifuServer.currentPoints == waifuServer.number){		
+	
+	if(waifuServer.currentPoints == waifuServer.number){	
+		
+	if(waifuServer.mSent == false){	
+	
+	waifuServer.mSent == true;	
 	var waifu = jsonContent.waifus;
 	const filter = m => m.content.includes(`p!get ${waifu[waifuServer.waifu].name}`);
 		
@@ -48,9 +54,11 @@ client.on('message', async msg => {
 			msg.channel.send('Looks like nobody got the answer this time.');
 			waifus.delete(msg.guild.id);
 		});
-	});	
+	});
 		
-		
+	}else {
+	return;
+	}		
 	}else{
 	const points = eval(waifuServer.currentPoints) + eval(1);
 	waifuServer.currentPoints = points;	
