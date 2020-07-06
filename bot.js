@@ -13,6 +13,8 @@ client.on('message', async msg => {
 	if (msg.author.bot) return;
 	const waifuServer = waifus.get(msg.guild.id);
 	
+///////////////////////////////////////  M A P S  ///////////////////////////////////////			
+	
 	if(!waifuServer){
 	const waifuConstruct = {
 		textChannel: msg.channel,
@@ -25,17 +27,18 @@ client.on('message', async msg => {
 	}else{
 	
 	if(waifuServer.currentPoints == waifuServer.number){	
+
+///////////////////////////////////////  S P A W N  ///////////////////////////////////////	
 		
-	if(waifuServer.mSent == 1) return;		
-	
+	if(waifuServer.mSent == 1) return;			
 	waifuServer.mSent = 1;		
 	var waifu = jsonContent.waifus;
 	const filter = m => m.content.includes(`p!get ${waifu[waifuServer.waifu].name}`);
 		
 	const embed = new Discord.MessageEmbed()
-	.setTitle(waifu[waifuServer.waifu].name)
-	.setImage(waifu[waifuServer.waifu].image);
-		
+	.setTitle("Random Waifu just Spawned")
+	.setImage(waifu[waifuServer.waifu].image)
+	.setFooter('Use `p!get <name>` to add the waifu to your collection')	
 	msg.channel.send(embed).then(() => {
 	msg.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
 		.then(collected => {
@@ -49,10 +52,15 @@ client.on('message', async msg => {
 	});		
 		
 	}else{
+	
+///////////////////////////////////////  C O U N T  ///////////////////////////////////////			
+		
 	const points = eval(waifuServer.currentPoints) + eval(1);
 	waifuServer.currentPoints = points;			
 	}
 	}
+	
+///////////////////////////////// D E S C R I P T I O N ////////////////////////////////////
 	
 	if (msg.content.startsWith(prefix + 'description')) {
 	const args = msg.content.slice(prefix.length).split(` `);
@@ -60,6 +68,8 @@ client.on('message', async msg => {
 	if (!args[1]) {
 	return msg.channel.send("You need to specify a Waifu");
 	}
+		
+///////////////////////////////////////  W A I F U S  ///////////////////////////////////////	
 		
 	const waifus = {
 	"URARAKA":jsonContent.waifus[0],
