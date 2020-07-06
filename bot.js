@@ -55,11 +55,11 @@ client.on('message', async msg => {
 	}
 	}
 	
-	if (message.content.startsWith(prefix + 'description')) {
-	const args = message.content.slice(prefix.length).split(` `);
+	if (msg.content.startsWith(prefix + 'description')) {
+	const args = msg.content.slice(prefix.length).split(` `);
 		
 	if (!args.length) {
-		return message.channel.send("You need to specify a Waifu");
+		return msg.channel.send("You need to specify a Waifu");
 	}
 		
 	const waifus = {
@@ -69,7 +69,7 @@ client.on('message', async msg => {
 	const embed = new Discord.MessageEmbed()
 	.setTitle(waifus[args[1].toUpperCase()].name)
 	.setImage(waifus[args[1].toUpperCase()].image)
-	return message.channel.send(embed);
+	return msg.channel.send(embed);
 	}
 });
 
