@@ -4,13 +4,15 @@
     "name":"URARAKA",
     "displayName":"Uraraka Ochaco",
     "anime":"My Hero Academia", 
+    "gender":"Female",  
     "description":"Ochaco is a very open-minded, nice, cheerful, lively, outgoing, and optimistic girl. She gets easily excited over little things and has a habit of overreacting with exaggerated facial expressions just like Izuku.",
     "image":"https://i.pinimg.com/originals/7d/be/68/7dbe6823e96079297e7c976a5a1fdad3.png"
     },
     {
     "name":"ATAGO",
     "displayName":"Atago",
-    "anime":"Azur Lane",  
+    "anime":"Azur Lane", 
+    "gender":"Female",  
     "description":"After the betrayal of the Crimson Axis by the deceitful Sirens, Atago was more than ready to reconcile and rejoin her Azur Lane comrades. Atago is the personification of an elder sister. She cares deeply for those that are close to her, and is a friendly and calm woman.",
     "image":"https://pm1.narvii.com/6947/ec6a42dab9ba58c48e6b0dcf2447527114769f2ar1-850-1200v2_uhq.jpg"
     }
