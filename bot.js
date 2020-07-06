@@ -54,6 +54,24 @@ client.on('message', async msg => {
 	return;			
 	}
 	}
+	
+	if (message.content.startsWith(prefix + 'description')) {
+	const args = message.content.slice(prefix.length).split(` `);
+		
+	if (!args.length) {
+		const embed = new Discord.MessageEmbed()
+		return message.channel.send(embed);
+	}
+		
+	const waifus = {
+	"URARAKA":jsonContent.waifus[0],
+	"ATAGO":jsonContent.waifus[1],
+	}
+	
+	.setTitle(waifus[args[1].toUpperCase()].name)
+	.setImage(waifus[args[1].toUpperCase()].image)
+	
+	}
 });
 
 function generateWaifu(){
