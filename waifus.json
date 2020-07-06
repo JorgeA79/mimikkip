@@ -1,7 +1,7 @@
 {
   "waifus":[
     {
-    "name":"URARAKA",
+    "name": ["URARAKA"],
     "displayName":"Uraraka Ochaco",
     "anime":"My Hero Academia", 
     "gender":"Female",  
@@ -9,7 +9,7 @@
     "image":"https://i.pinimg.com/originals/7d/be/68/7dbe6823e96079297e7c976a5a1fdad3.png"
     },
     {
-    "name":"ATAGO",
+    "name":["ATAGO"],
     "displayName":"Atago",
     "anime":"Azur Lane", 
     "gender":"Female",  
@@ -17,7 +17,7 @@
     "image":"https://pm1.narvii.com/6947/ec6a42dab9ba58c48e6b0dcf2447527114769f2ar1-850-1200v2_uhq.jpg"
     },
     {
-    "name":"SYLPHYN",
+    "name":["SYLPHYN"],
     "displayName":"Sylphynford Tachibana",
     "anime":"Himouto! Umaru-Chan", 
     "gender":"Female",  
