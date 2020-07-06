@@ -68,8 +68,9 @@ client.on('message', async msg => {
 	const embed = new Discord.MessageEmbed()
 	.setTitle(waifus[args[1].toUpperCase()].displayName)
 	.setDescription(waifus[args[1].toUpperCase()].description)
-	.addField("Anime/Game:", waifus[args[1].toUpperCase()].description, true)
-	.setImage(waifus[args[1].toUpperCase()].image)
+	.addField("Anime/Game:", waifus[args[1].toUpperCase()].anime, true)
+	.addField("Gender:", waifus[args[1].toUpperCase()].gender, true)
+	.setThumbnail(waifus[args[1].toUpperCase()].image)
 	return msg.channel.send(embed);
 	}
 });
