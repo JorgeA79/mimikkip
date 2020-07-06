@@ -57,7 +57,7 @@ client.on('message', async msg => {
 	if (msg.content.startsWith(prefix + 'description')) {
 	const args = msg.content.slice(prefix.length).split(` `);
 		
-	if (!args.length) {
+	if (!args[1]) {
 	return msg.channel.send("You need to specify a Waifu");
 	}
 		
