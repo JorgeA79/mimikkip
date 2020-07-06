@@ -74,6 +74,7 @@ client.on('message', async msg => {
 	const waifus = {
 	"URARAKA":jsonContent.waifus[0],
 	"ATAGO":jsonContent.waifus[1],
+	"SYLPHYN":jsonContent.waifus[2],	
 	}
 	const embed = new Discord.MessageEmbed()
 	.setTitle(waifus[args[1].toUpperCase()].displayName)
