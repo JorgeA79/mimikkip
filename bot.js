@@ -50,8 +50,7 @@ client.on('message', async msg => {
 		
 	}else{
 	const points = eval(waifuServer.currentPoints) + eval(1);
-	waifuServer.currentPoints = points;	
-	return;			
+	waifuServer.currentPoints = points;			
 	}
 	}
 	
@@ -59,7 +58,7 @@ client.on('message', async msg => {
 	const args = msg.content.slice(prefix.length).split(` `);
 		
 	if (!args.length) {
-		return msg.channel.send("You need to specify a Waifu");
+	return msg.channel.send("You need to specify a Waifu");
 	}
 		
 	const waifus = {
