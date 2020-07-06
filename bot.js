@@ -59,18 +59,17 @@ client.on('message', async msg => {
 	const args = message.content.slice(prefix.length).split(` `);
 		
 	if (!args.length) {
-		const embed = new Discord.MessageEmbed()
-		return message.channel.send(embed);
+		return message.channel.send("You need to specify a Waifu");
 	}
 		
 	const waifus = {
 	"URARAKA":jsonContent.waifus[0],
 	"ATAGO":jsonContent.waifus[1],
 	}
-	
+	const embed = new Discord.MessageEmbed()
 	.setTitle(waifus[args[1].toUpperCase()].name)
 	.setImage(waifus[args[1].toUpperCase()].image)
-	
+	return message.channel.send(embed);
 	}
 });
 
