@@ -1,7 +1,7 @@
 {
   "waifus":[
     {
-    "name": ["URARAKA"],
+    "name": ["URARAKA","OCHACO"],
     "displayName":"Uraraka Ochaco",
     "anime":"My Hero Academia", 
     "gender":"Female",  
@@ -17,7 +17,7 @@
     "image":"https://pm1.narvii.com/6947/ec6a42dab9ba58c48e6b0dcf2447527114769f2ar1-850-1200v2_uhq.jpg"
     },
     {
-    "name":["SYLPHYN"],
+    "name":["SYLPHYN","SYLPHYNFORD","TACHIBANA"],
     "displayName":"Sylphynford Tachibana",
     "anime":"Himouto! Umaru-Chan", 
     "gender":"Female",  
