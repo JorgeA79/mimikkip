@@ -36,7 +36,7 @@ client.on('message', async msg => {
 	//const filter = m => m.content.includes(`p!get ${waifu[waifuServer.waifu].name}`);
 	
 	const filter = response => {
-	return waifu[waifuServer.waifu].name.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+	return waifu[waifuServer.waifu].name.some(answer => `p!get ${answer.toLowerCase()}` === response.content.toLowerCase());
 	};
 		
 	const embed = new Discord.MessageEmbed()
