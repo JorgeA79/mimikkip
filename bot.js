@@ -66,7 +66,7 @@ client.on('message', async msg => {
 	"ATAGO":jsonContent.waifus[1],
 	}
 	const embed = new Discord.MessageEmbed()
-	.setTitle(waifus[args[1].toUpperCase()].name)
+	.setTitle(waifus[args[1].toUpperCase()].displayName)
 	.setImage(waifus[args[1].toUpperCase()].image)
 	return msg.channel.send(embed);
 	}
